@@ -1,9 +1,9 @@
 from PIL import Image, ImageOps, ImageGrab as ig
 import pytesseract, keyboard, os
 
-def yakala(screen=None):
-    screen = ig.grab()
-    yeniResim = screen.crop((16,682,1815,730))
+def yakala(ekran=None):
+    ekran = ig.grab()
+    yeniResim = ekran.crop((16,682,1815,730))
     yeniResim = ImageOps.invert(yeniResim)
     # yeniResim.show()
     yazdir(yeniResim)
@@ -40,9 +40,8 @@ def ipucuVarMi(text):
 # keyboard.wait('esc')   
 if __name__ == "__main__":
     while(True):
-        screen = ig.grab()
-        yakala(screen)
-        # cv2.imshow("test", np.array(screen))ss
+        ekran = ig.grab()
+        yakala(ekran)
         if keyboard.is_pressed("esc"):
             break
         
